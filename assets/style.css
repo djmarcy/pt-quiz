@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    background-color:mintcream;
+    color: darkslategray;
+}
+
+#quiz-container {
+    display: none;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Quiz</title>
+
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+    <div id="container">
+        
+        <header>
+            <h1>Do You Want to Play A Game?</h1>
+            <h2>A JavaScript Quiz by Dylan</h2>
+        </header>
+
+        <div id="row">
+
+            <aside>
+                <h2>Time Left:</h2>
+                <div id="counter"></div>
+            </aside>
+
+            <article id="start-container">
+                <h2>Ready to Begin?</h2>
+
+                <p>Once you begin, you will have 60 seconds to finish the quiz. The number of seconds left on the clock when you finish the quiz will be your score. Every wrong answer you choose will subtract 5 seconds from the clock, so be quick about your answers, but not <i>too</i> quick!</p>
+
+                <button>Start Game</button>
+            </article>
+
+            <article id="quiz-container">
+                <div id="quiz-question"></div>
+
+                <div id="answer-container">
+                    <ul>
+                        <li data-answer="1"></li>
+                        <li data-answer="2"></li>
+                        <li data-answer="3"></li>
+                        <li data-answer="4"></li>
+                    </ul>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+    
+    <script src="./assets/script.js"></script>
+</body>
+</html>

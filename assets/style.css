@@ -1,7 +1,42 @@
 * {
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
     background-color:mintcream;
     color: darkslategray;
+    margin: 0;
+}
+
+header {
+    background-color: darkslategray;
+    color: mintcream;
+    text-align: center;
+    margin: 0;
+    padding: 15px 30px
+}
+
+.top-buffer {
+    margin-top: 45px;
+}
+
+.start-btn {
+    display: block;
+    background-color: darkslategray;
+    color: mintcream;
+    border: solid 1px darkslategray;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 0px;
+}
+
+.start-btn:hover,
+.start-btn:active,
+.start-btn:focus {
+    background-color: mintcream;
+    color: darkslategray;
+    border: solid 1px darkslategray;
 }
 
 #quiz-container {

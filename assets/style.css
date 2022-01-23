@@ -12,16 +12,24 @@ body {
 header {
     background-color: darkslategray;
     color: mintcream;
-    text-align: center;
     margin: 0;
     padding: 15px 30px
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-align: center;
 }
 
 .top-buffer {
     margin-top: 45px;
 }
 
-.start-btn {
+.start-btn,
+.answer-btn {
     display: block;
     background-color: darkslategray;
     color: mintcream;
@@ -32,13 +40,20 @@ header {
 }
 
 .start-btn:hover,
+.answer-btn:hover,
 .start-btn:active,
-.start-btn:focus {
+.answer-btn:active,
+.start-btn:focus,
+.answer-btn:focus {
     background-color: mintcream;
     color: darkslategray;
     border: solid 1px darkslategray;
 }
 
-#quiz-container {
+.hidden {
     display: none;
+}
+
+.visible {
+    display: block;
 }

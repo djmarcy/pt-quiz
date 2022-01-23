@@ -113,24 +113,29 @@ function startGame() {
 
 function loadQuestions() {
     // Propogate first question
-    for (i = 0; i < questions.length; i++) {
-        quizQuestion.textContent = questions[i].Question
-        document.body.querySelector('[data-answer="1"]').textContent = questions[i].Responses[0]
-        document.body.querySelector('[data-answer="2"]').textContent = questions[i].Responses[1]
-        document.body.querySelector('[data-answer="3"]').textContent = questions[i].Responses[2]
-        document.body.querySelector('[data-answer="4"]').textContent = questions[i].Responses[3]
+    quizQuestion.textContent = questions[0].Question
 
-        // Track click
-        function trackClick(EventTarget) {
-        console.log(EventTarget)
+    document.getElementById("answer-1").textContent = questions[0].Responses[0]
+    document.getElementById("answer-2").textContent = questions[0].Responses[1]
+    document.getElementById("answer-3").textContent = questions[0].Responses[2]
+    document.getElementById("answer-4").textContent = questions[0].Responses[3]
+
+    
+    // Compare to correct answer
+    document.getElementById("answer-1").addEventListener("click", checkanswer)
+    document.getElementById("answer-2").addEventListener("click", checkanswer)
+    document.getElementById("answer-3").addEventListener("click", checkanswer)
+    document.getElementById("answer-4").addEventListener("click", checkanswer)
+
+    function checkanswer() {
+        if(this.textContent == questions[0].Correct) {
+            console.log("Correct!")
+        } else {
+            console.log("Nope, try again.")
+        }
     }
-        trackClick()
-        // Compare to correct answer
+    // Iterate to next question
 
-
-        // Iterate to next question
-        i++
-     }
 }
 
 

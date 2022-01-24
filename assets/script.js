@@ -1,5 +1,4 @@
 // Set variables
-let gameContainer = document.getElementById("question-start")
 let startContainer = document.getElementById("start-container")
 let startButton = document.getElementById("start-btn")
 let quizContainer = document.getElementById("quiz-container")
@@ -104,7 +103,10 @@ function startGame() {
         timeLeft--
         counter.textContent = timeLeft
 
-        if (timeLeft == 0) {
+        if (questionNumber >= questions.length) {
+            clearInterval(timeInterval)
+        }
+        else if (timeLeft == 0) {
             clearInterval(timeInterval)
          }
     }, 1000)
@@ -130,6 +132,8 @@ function loadQuestions() {
     document.getElementById("answer-3").addEventListener("click", checkanswer)
     document.getElementById("answer-4").addEventListener("click", checkanswer)
     } else {
+        quizContainer.setAttribute("class", "hidden")
+        scoreContaienr.setAttribute("class", "visible")
         highScores();
     }
     // Iterate to next question
@@ -149,8 +153,6 @@ function checkanswer() {
 }
 
 function highScores() {
-    gameContainer.setAttribute("class", "hidden")
-    scoreContaienr.setAttribute("class", "visible")
     
     score.textContent = timeLeft
 }

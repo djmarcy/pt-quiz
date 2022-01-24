@@ -1,12 +1,16 @@
 // Set variables
+let gameContainer = document.getElementById("question-start")
 let startContainer = document.getElementById("start-container")
 let startButton = document.getElementById("start-btn")
 let quizContainer = document.getElementById("quiz-container")
 let quizQuestion = document.getElementById("quiz-question")
 let answerContainer = document.getElementById("answer-container")
+let scoreContaienr = document.getElementById("score-container")
+let score = document.getElementById("score")
+
 let timeLeft = 60
 let counter = document.getElementById("counter")
-counter.textContent = timeLeft 
+counter.textContent = timeLeft
 
 // Set questions
 let questions = [
@@ -100,25 +104,24 @@ function startGame() {
         timeLeft--
         counter.textContent = timeLeft
 
-        // if () {
-        //     clearInterval(timeInterval)
-        //     counter.textContent = 0
-        // } else if (timeLeft == 0) {
-        //     clearInterval(timeInterval)
-        // }
+        if (timeLeft == 0) {
+            clearInterval(timeInterval)
+         }
     }, 1000)
 
     loadQuestions();
 }
 
+questionNumber = 0
 function loadQuestions() {
     // Propogate first question
-    quizQuestion.textContent = questions[0].Question
+    if (questionNumber < questions.length) {
+    quizQuestion.textContent = questions[questionNumber].Question
 
-    document.getElementById("answer-1").textContent = questions[0].Responses[0]
-    document.getElementById("answer-2").textContent = questions[0].Responses[1]
-    document.getElementById("answer-3").textContent = questions[0].Responses[2]
-    document.getElementById("answer-4").textContent = questions[0].Responses[3]
+    document.getElementById("answer-1").textContent = questions[questionNumber].Responses[0]
+    document.getElementById("answer-2").textContent = questions[questionNumber].Responses[1]
+    document.getElementById("answer-3").textContent = questions[questionNumber].Responses[2]
+    document.getElementById("answer-4").textContent = questions[questionNumber].Responses[3]
 
     
     // Compare to correct answer
@@ -126,16 +129,30 @@ function loadQuestions() {
     document.getElementById("answer-2").addEventListener("click", checkanswer)
     document.getElementById("answer-3").addEventListener("click", checkanswer)
     document.getElementById("answer-4").addEventListener("click", checkanswer)
-
-    function checkanswer() {
-        if(this.textContent == questions[0].Correct) {
-            console.log("Correct!")
-        } else {
-            console.log("Nope, try again.")
-        }
+    } else {
+        highScores();
     }
     // Iterate to next question
 
+}
+
+function checkanswer() {
+    if(this.textContent == questions[questionNumber].Correct) {
+        questionNumber++;
+        loadQuestions();
+    } else {
+        count = timeLeft -= 5
+        questionNumber++;
+        loadQuestions();
+    }
+
+}
+
+function highScores() {
+    gameContainer.setAttribute("class", "hidden")
+    scoreContaienr.setAttribute("class", "visible")
+    
+    score.textContent = timeLeft
 }
 
 

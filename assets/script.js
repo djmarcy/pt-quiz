@@ -6,10 +6,13 @@ let quizQuestion = document.getElementById("quiz-question")
 let answerContainer = document.getElementById("answer-container")
 let scoreContaienr = document.getElementById("score-container")
 let score = document.getElementById("score")
+let timerContainer = document.getElementById("timer")
 
 let timeLeft = 60
 let counter = document.getElementById("counter")
 counter.textContent = timeLeft
+
+questionNumber = 0
 
 // Set questions
 let questions = [
@@ -91,6 +94,10 @@ let questions = [
     },
   ];
 
+
+// Start Game
+startButton.addEventListener("click", startGame)
+
 // List functions
 function startGame() {
     // Hide Start Container, show quiz container
@@ -114,7 +121,6 @@ function startGame() {
     loadQuestions();
 }
 
-questionNumber = 0
 function loadQuestions() {
     // Propogate first question
     if (questionNumber < questions.length) {
@@ -133,11 +139,10 @@ function loadQuestions() {
     document.getElementById("answer-4").addEventListener("click", checkanswer)
     } else {
         quizContainer.setAttribute("class", "hidden")
+        timerContainer.setAttribute("class", "hidden")
         scoreContaienr.setAttribute("class", "visible")
         highScores();
     }
-    // Iterate to next question
-
 }
 
 function checkanswer() {
@@ -157,6 +162,4 @@ function highScores() {
     score.textContent = timeLeft
 }
 
-
-// Add event listeners
-startButton.addEventListener("click", startGame)
+// Store to/retrieve from local storage

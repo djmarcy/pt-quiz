@@ -1,19 +1,20 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 body {
-    background-color:mintcream;
-    color: darkslategray;
-    margin: 0;
+  background-color: mintcream;
+  color: darkslategray;
+  margin: 0;
 }
 
 header {
-    background-color: darkslategray;
-    color: mintcream;
-    margin: 0;
-    padding: 15px 30px
+  background-color: darkslategray;
+  color: mintcream;
+  margin: 0;
+  padding: 15px 30px;
 }
 
 h1,
@@ -21,39 +22,56 @@ h2,
 h3,
 h4,
 h5 {
-    text-align: center;
+  text-align: center;
 }
 
 .top-buffer {
-    margin-top: 45px;
+  margin-top: 45px;
 }
 
 .start-btn,
-.answer-btn {
-    display: block;
-    background-color: darkslategray;
-    color: mintcream;
-    border: solid 1px darkslategray;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 0px;
+.answer-btn,
+.submit-btn {
+  display: block;
+  background-color: darkslategray;
+  color: mintcream;
+  border: solid 1px darkslategray;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 0px;
 }
 
 .start-btn:hover,
 .answer-btn:hover,
+.submit-btn:hover,
 .start-btn:active,
 .answer-btn:active,
+.submit-btn:active,
 .start-btn:focus,
-.answer-btn:focus {
-    background-color: mintcream;
-    color: darkslategray;
-    border: solid 1px darkslategray;
+.answer-btn:focus,
+.submit-btn:focus {
+  background-color: mintcream;
+  color: darkslategray;
+  border: solid 1px darkslategray;
 }
-
 .hidden {
-    display: none;
+  display: none;
 }
 
 .visible {
-    display: block;
+  display: block;
+}
+
+.initials-label {
+  display: block;
+  text-align: center;
+}
+
+.initials {
+  display: block;
+  margin: 15px auto;
+}
+
+#score-display {
+  margin: 0 auto;
 }
